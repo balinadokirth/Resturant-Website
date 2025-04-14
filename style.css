@@ -1,0 +1,414 @@
+/* ===================
+   General Reset
+   =================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  /* ===================
+     Fonts
+     =================== */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script&display=swap');
+  
+  /* ===================
+     Body Styling
+     =================== */
+  body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(120deg, #1a1a1a, #333333);
+    color: white;
+    background-attachment: fixed;
+  }
+  
+  /* ===================
+     Logo Styling
+     =================== */
+  .logo {
+    width: 110px;
+    height: auto;
+  }
+  
+  /* ===================
+     Headings Styling
+     =================== */
+  h1, h2, h3 {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  /* ===================
+     Header Navigation
+     =================== */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(59, 57, 57, 0.85);
+    padding: 10px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  nav ul li a:hover {
+    background: gold;
+    color: black;
+  }
+  
+  /* ===================
+     Hero Section
+     =================== */
+  .hero {
+    background: url('n1.jpg') no-repeat center center/cover;
+    padding: 250px 40px;
+    position: relative;
+  }
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  .hero h1, .hero p {
+    position: relative;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  .hero p {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
+  
+  /* ===================
+     Button Styles
+     =================== */
+  .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6600, #e65c00);
+    color: white;
+    padding: 14px 28px;
+    font-size: 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4);
+    transition: 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  
+  
+  .btn:hover {
+    background: linear-gradient(135deg, #e65c00, #ff4500);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.6);
+  }
+  
+  /* ===================
+     Section Backgrounds
+     =================== */
+  .about {
+    background: url('menu1.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    padding: 60px 20px;
+    color: white;
+  }
+  .contact {
+    background: url('menu1.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    padding: 60px 20px;
+    color: white;
+  }
+  
+  /* ===================
+     Menu Section
+     =================== */
+  .menu-container {
+    background: url('menu1.jpg') no-repeat center center/cover;
+    padding: 40px 20px;
+    margin: 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  /* ===================
+     Menu Items
+     =================== */
+  .menu-item {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: dropAnimation 0.5s ease-out forwards;
+  }
+  
+  @keyframes dropAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .menu-item img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  
+  .menu-item:hover img {
+    transform: scale(1.08);
+  }
+  
+  .menu-item h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 12px 0 5px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .menu-item p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f1f1f1;
+  }
+  
+  /* ===================
+     Signature Dishes
+     =================== */
+  .signature-dishes {
+    background-color: #1c1c1c;
+    padding: 60px 40px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .signature-dishes h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #f7a440;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .dish-card {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .dish-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .dish-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .dish-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #ffa94d;
+  }
+  
+  .dish-card p {
+    font-size: 0.95rem;
+    color: #ddd;
+    line-height: 1.5;
+  }
+  
+  /* ===================
+     Glowing Text Effect
+     =================== */
+  .glow-text {
+    color: #16dbc4;
+    text-shadow: 0 0 8px rgba(255, 106, 0, 0.8), 0 0 15px rgba(255, 106, 0, 0.6);
+  }
+  
+  /* ===================
+     Footer Styling
+     =================== */
+  footer {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    color: white;
+    margin-top: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* ===================
+     Responsive Design
+     =================== */
+  @media (max-width: 778px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 20px;
+    }
+  
+    nav {
+      justify-content: center;
+      margin-top: 10px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .hero {
+      padding: 150px 20px;
+    }
+  
+    .menu {
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+  
+    .signature-dishes h2 {
+      font-size: 2rem;
+    }
+  
+    .dish-card h3 {
+      font-size: 1.2rem;
+    }
+  
+    .btn {
+      font-size: 16px;
+      padding: 12px 24px;
+    }
+  
+    .signature-dishes {
+      padding: 40px 20px;
+    }
+  
+    .dishes-grid {
+      gap: 20px;
+    }
+  
+    .dish-card {
+      padding: 15px;
+    }
+  
+    .dish-image {
+      height: 180px;
+    }
+  }
+/* ===================
+   Contact Page Styling
+   =================== */
+   .contact-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    margin: 40px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  .contact-container h2 {
+    color: #f7a440;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-container p {
+    font-size: 18px;
+    margin: 12px 0;
+  }
+  
+  .contact-container h3 {
+    margin-top: 30px;
+    font-size: 22px;
+    color: #ffa94d;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
+  
